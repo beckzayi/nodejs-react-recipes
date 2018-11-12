@@ -1,0 +1,36 @@
+{
+  "name": "nodejs-react-recipes",
+  "version": "1.0.0",
+  "description": "A starter for Nodejs-React Heroku deployment",
+  "main": "server.js",
+  "engines": {
+    "node": "10.13.0",
+    "npm": "6.4.1"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "server": "nodemon server.js",
+    "client": "cd client && npm start",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "nodejs",
+    "react",
+    "heroku"
+  ],
+  "author": "Darren Li",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "concurrently": "^4.0.1",
+    "cors": "^2.8.5",
+    "dotenv": "^6.1.0",
+    "express": "^4.16.3",
+    "mongoose": "^5.2.10"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.3"
+  }
+}
